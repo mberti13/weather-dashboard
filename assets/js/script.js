@@ -27,7 +27,6 @@ var getCityInfo = function(city){
             return response.json();
         })
         .then(function(data){
-            showUvLevel(data);
             console.log(data);
             //resets current city form on reload
             document.getElementById("current-city").innerHTML = "";
@@ -73,6 +72,7 @@ var getCityInfo = function(city){
                 // uvElement.textContent = "U.V. Index: "+ data.daily[i].uvi;
                 document.getElementById(i).append(date, tempElement, tempIcon, humidityElement, windElement);
             }
+            showUvLevel(data);
         })
     })
     //create local storage
