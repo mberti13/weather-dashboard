@@ -8,25 +8,27 @@
     <link rel="stylesheet" href="./assets/css/style.css"/>
     <title>Weather Dashboard</title>
 </head>
-<body class="">
+<body class="container-fluid">
     <div class="row">
     <header id="header" class="d-flex justify-content-center w-100 bg-dark text-white mb-1 pb-2 align-items-center">
         <h2>Weather Dashboard</h2>
     </header>
 </div>
-<div class="row mb-0">
+<div class="row">
+<div class="col-4">
     <form id="search-form">
         <label for="city">Search For A City:</label>
         <input type="text" placeholder="Search For a City" city="city" id="city" class="mb-1">
         <button type="submit" class="btn btn-dark btn-sm">Search</button>
     </form>
+</div>
+<div id="current-city" class="col-8">
+</div>
     <div class="row">
-    <div id="search-history">
+    <div id="search-history" class="col-4">
         
     </div>
-    <div id="current-city">
-    </div>
-    <div id="forecast">
+    <div id="forecast" class="col-8">
         <div class="card" id="1">
 
         </div>
