@@ -9,14 +9,18 @@
     <title>Weather Dashboard</title>
 </head>
 <body class="">
-    <header id="header">
+    <div class="row">
+    <header id="header" class="d-flex justify-content-center w-100 bg-dark text-white mb-1 pb-2 align-items-center">
         <h2>Weather Dashboard</h2>
     </header>
+</div>
+<div class="row mb-0">
     <form id="search-form">
         <label for="city">Search For A City:</label>
-        <input type="text" placeholder="Search For a City" city="city" id="city">
-        <button type="submit" class="btn">Search</button>
+        <input type="text" placeholder="Search For a City" city="city" id="city" class="mb-1">
+        <button type="submit" class="btn btn-dark btn-sm">Search</button>
     </form>
+    <div class="row">
     <div id="search-history">
         
     </div>

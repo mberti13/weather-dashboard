@@ -78,5 +78,5 @@ showHistory = function () {
   }
   showHistory();
 
-//
+//mock call
 // getCityInfo("london");
