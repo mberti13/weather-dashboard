@@ -27,6 +27,7 @@ var getCityInfo = function(city){
             return response.json();
         })
         .then(function(data){
+            showUvLevel(data);
             console.log(data);
             //resets current city form on reload
             document.getElementById("current-city").innerHTML = "";
@@ -51,26 +52,42 @@ var getCityInfo = function(city){
             //create p and display UV Index
             var uvElement = document.createElement("p");
             uvElement.textContent = "U.V. Index: "+ data.current.uvi;
+            uvElement.className = 'uvIndex';
+
             //Append all to #current-city section
             document.getElementById("current-city").append(currentCityName, weatherIconEl, currentDateEl, tempElement, humidityElement, windElement, uvElement);
 
             for(var i =1; i < 6; i++){
+                console.log(data);
                 document.getElementById(i).innerHTML = "";
+                var date = new Date(data.daily[i].dt * 1000).toLocaleDateString("en-US");
                 var tempElement = document.createElement("p")
                 tempElement.textContent = "Predicted Temperature: " + data.daily[i].temp.day;
+                var tempIcon = document.createElement("img");
+                tempIcon.setAttribute('src','http://openweathermap.org/img/wn/'+data.daily[i].weather[0].icon+'.png')
                 var humidityElement = document.createElement("p")
                 humidityElement.textContent = "Humidity: " + data.daily[i].humidity;
                 var windElement = document.createElement("p");
                 windElement.textContent = "Wind Speed: " + data.daily[i].wind_speed;
                 // var uvElement = document.createElement("p");
                 // uvElement.textContent = "U.V. Index: "+ data.daily[i].uvi;
-                document.getElementById(i).append(tempElement, humidityElement, windElement);
+                document.getElementById(i).append(date, tempElement, tempIcon, humidityElement, windElement);
             }
         })
     })
     //create local storage
  
 }
+//Create loop for UV Color Code
+function showUvLevel(data) {
+    if (data.current.uvi <= 3){
+        $('.uvIndex').addClass('favorable');
+    } else if (data.current.uvi >= 4 || data.current.uvi <= 7){
+        $('.uvIndex').addClass('moderate');
+    } else {
+        $('.uvIndex').addClass('severe');
+    }
+};
 setLocalStorage = function(city){
     if(cityHistory.indexOf(city) === -1){
         cityHistory.push(city);
@@ -83,6 +100,7 @@ showHistory = function () {
     for(var i = 0; i < cityHistory.length; i++){
         var button = document.createElement("button");
         button.textContent = cityHistory[i];
+        button.setAttribute('class', 'search-history-btn');
         button.type = "button";
         button.addEventListener("click",function (event) {
             var city = event.target.innerText;
