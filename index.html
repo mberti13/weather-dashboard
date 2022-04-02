@@ -10,25 +10,27 @@
 </head>
 <body class="container-fluid">
     <div class="row">
-    <header id="header" class="d-flex justify-content-center w-100 bg-dark text-white mb-1 pb-2 align-items-center">
-        <h2>Weather Dashboard</h2>
+    <header id="header" class="d-flex justify-content-center w-100 bg-dark text-white mb-0 pb-2 align-items-center">
+        <h1>Weather Dashboard</h1>
     </header>
 </div>
 <div class="row">
-<div class="col-4">
-    <form id="search-form">
-        <label for="city">Search For A City:</label>
-        <input type="text" placeholder="Search For a City" city="city" id="city" class="mb-1">
-        <button type="submit" class="btn btn-dark btn-sm">Search</button>
+<div class="col-5 bg-secondary card">
+    <h2 class="card-header text-uppercase">Search by City</h2>
+    <form id="search-form" class="card-body">
+        <label for="city" class="form-label">Search For A City:</label>
+        <input type="text" placeholder="Search For a City" city="city" id="city" class="mt-0">
+        <button type="submit" class="btn btn-light btn-sm">Search</button>
     </form>
 </div>
-<div id="current-city" class="col-8">
+
+<div id="current-city" class="col-7">
 </div>
     <div class="row">
-    <div id="search-history" class="col-4">
+    <div id="search-history" class="col-5">
         
     </div>
-    <div id="forecast" class="col-8">
+    <div id="forecast" class="col-12 d-flex w-100">
         <div class="card" id="1">
 
         </div>
@@ -50,6 +52,7 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="./assets/js/script.js"></script>
 </body>
