@@ -28,6 +28,9 @@ header h1 {
     margin: 3px;
     width: 100%;
 }
+.hide{
+    display: none;
+}
 .btn {
     width: 100%;
 }

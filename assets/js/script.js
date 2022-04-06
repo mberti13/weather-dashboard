@@ -59,6 +59,7 @@ var getCityInfo = function(city){
             for(var i =1; i < 6; i++){
                 console.log(data);
                 document.getElementById(i).innerHTML = "";
+                document.getElementById(i).classList.remove("hide");
                 var date = new Date(data.daily[i].dt * 1000).toLocaleDateString("en-US");
                 var tempElement = document.createElement("p")
                 tempElement.textContent = "Predicted Temperature: " + data.daily[i].temp.day;
