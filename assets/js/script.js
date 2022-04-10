@@ -15,7 +15,7 @@ searchForm.addEventListener("submit", function(event){
 })
 //add event listener to search bar to find the input text
 var getCityInfo = function(city){
-    var currentApiUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=1ee273d29337b74fa7d7a2d9da75ae71`;
+    var currentApiUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=1ee273d29337b74fa7d7a2d9da75ae71`;
     fetch(currentApiUrl)
     .then(function(response){
         return response.json();
